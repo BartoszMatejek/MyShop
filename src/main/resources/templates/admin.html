@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex, nofollow">
+
+    <title>Logowanie</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="../static/css/admin.css" th:href="@{css/admin.css}" rel="stylesheet" />
+
+</head>
+
+<body>
+<div class="login-page">
+    <div class="form">
+        <h1>Panel administratora</h1>
+        <p style="color: #ffffff;" th:text="${error}" />
+        <form action="#" th:action="@{/admin}" th:object="${loginAdmin}" method="post">
+            <input type="text" th:field="*{login}" placeholder="login" /></p>
+            <input type="password" th:field="*{password}" placeholder="hasło" /></p>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Zaloguj</button>
+            </a></p>
+        </form>
+    </div>
+</div>
+</body>
+</html>
