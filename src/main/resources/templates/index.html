@@ -9,14 +9,18 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="../static/css/index.css" th:href="@{css/index.css}" rel="stylesheet" type="text/css"  />
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Oswald" rel="stylesheet">
     <style>
         .jumbotron {
             margin-bottom: 0;
         }
 
         footer {
-            background-color: #f2f2f2;
+
             padding: 25px;
+        }
+        .panel-footer{
+            font-family: 'Merriweather', serif;
         }
     </style>
 </head>
@@ -40,9 +44,9 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a th:href="@{'/'}">Products</a></li>
-                <li><a th:href="@{'/history'}">Transaction story</a></li>
+                <li class="active"><li><a th:href="@{'/mydata'}">Moje dane</a></li>
+                <li><a th:href="@{'/'}">Produkty</a></li>
+                <li><a th:href="@{'/history'}">Historia transakcji</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -57,7 +61,7 @@
     <div class="row">
         <div class="col-md-4" th:each="item: ${listProduct.products}">
             <div class="panel panel-primary">
-                <div class="panel-heading" th:text="${item.description}" style="background-color: #9e9e9e"></div>
+                <div class="panel-heading" th:text="${item.description}" style="background-color: #8E6B23"></div>
                 <div class="panel-body text-center"> <img th:src="${item.imageSrc}" class="img-fluid" alt="Image"></div>
                 <div class="panel-footer" align="center" th:text="${item.price} + ' PLN'"></div>
                 <a th:href="@{'/cart/' + ${item.id}}"><button type="button" class="btn btn-success" style="width: 100%">Kup teraz</button></a>

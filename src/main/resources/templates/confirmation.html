@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Oswald" rel="stylesheet">
     <style>
         body{
         }
@@ -15,7 +16,9 @@
             border-radius: 0;
             background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(loginpage.jpg);
         }
-
+        .container{
+            font-family: 'Merriweather', serif;
+        }
         .jumbotron {
             margin-bottom: 0;
         }
@@ -46,9 +49,9 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a th:href="@{'/'}">Products</a></li>
-                <li><a th:href="@{'/history'}">Transaction story</a></li>
+                <li class="active"><li><a th:href="@{'/mydata'}">Moje dane</a></li>
+                <li><a th:href="@{'/'}">Produkty</a></li>
+                <li><a th:href="@{'/history'}">Historia transakcji</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">

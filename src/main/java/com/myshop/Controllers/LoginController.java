@@ -29,11 +29,13 @@ public class LoginController {
         if (user != null) {
             ModelAndView modelAndView = new ModelAndView("forward:/");
             modelAndView.addObject("user",user);
+            modelAndView.addObject("error","");
+
             return modelAndView;
         } else {
             model.addAttribute("error", "Błędny login i/lub hasło");
             ModelAndView modelAndView = new ModelAndView("redirect:/login");
-            modelAndView.addObject(model);
+            modelAndView.addObject("error",model);
             return modelAndView;
         }
     }

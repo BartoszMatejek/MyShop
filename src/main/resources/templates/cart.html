@@ -20,6 +20,11 @@
             margin-bottom: 0;
         }
 
+        img{
+            width: 250px;
+            height: 200px;
+            text-align: center;
+        }
         footer {
             background-color: #f2f2f2;
             padding: 25px;
@@ -46,14 +51,14 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a th:href="@{'/'}">Products</a></li>
-                <li><a th:href="@{'/history/'}">Transaction story</a></li>
+                <li class="active"><li><a th:href="@{'/mydata'}">Moje dane</a></li>
+                <li><a th:href="@{'/'}">Produkty</a></li>
+                <li><a th:href="@{'/history'}">Historia transakcji</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-user" >User</span> </a></li>
+                <li><a href="/logout"><span class="glyphicon glyphicon-off" > Wyloguj</span> </a></li>
             </ul>
         </div>
     </div>
@@ -61,10 +66,10 @@
 
 <div class="container">
     <div class="row">
-        <h1 style="text-align: center"; >YOUR CART</h1>
+        <h1 style="text-align: center"; >Twój koszyk</h1>
             <div class="panel panel-primary">
                 <div class="panel-heading" th:text="${product.description}"></div>
-                <div class="panel-body" style="width: 90%; max-height: 90%"><img style="max-height: 300px; max-width: 300px" th:src="${product.imageSrc}" class="img-responsive" alt="Image"></div>
+                <div class="panel-body" style="width: 90%; max-height: 90%"><img th:src="${product.imageSrc}" class="img-responsive" alt="Image"></div>
                 <div class="panel-footer" align="center"> <p th:text="${product.price} + ' PLN'"> pln</p></div>
                 <a th:href="@{'/confirmation/' + ${product.id}}"><button type="button" class="btn btn-success" style="width: 100%">Potwierdż płatność</button></a>
                 <a th:href="@{'/'}"><button type="button" class="btn btn-danger" style="width: 100%">Anuluj</button></a>

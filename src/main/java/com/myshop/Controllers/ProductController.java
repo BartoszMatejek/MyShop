@@ -6,7 +6,6 @@ import com.myshop.repositories.BoughtProductsRepository;
 import com.myshop.repositories.ProductRepository;
 import com.myshop.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -67,6 +66,7 @@ public class ProductController {
         {
             return "redirect:/login";
         }
+            User user = userRepository.findByEmail(loggedUser.getEmail());
             Product product = productRepository.findById(id);
             model.addAttribute("product",product);
             return "cart";
@@ -107,5 +107,16 @@ public class ProductController {
         model.addAttribute("productList", homeModel);
 
         return "history";
+    }
+
+    @GetMapping("mydata")
+    public String getUserData(Model model){
+        if(loggedUser == null){
+            return "redirect:/login";
+        }
+        User user = userRepository.findByEmail(loggedUser.getEmail());
+        HomeViewModel homeViewModel = new HomeViewModel(user,null,null);
+        model.addAttribute("user", homeViewModel);
+        return "mydata";
     }
 }
