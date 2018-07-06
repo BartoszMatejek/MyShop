@@ -22,9 +22,11 @@ public class LoginController {
 
     @GetMapping("/login")
     public String loginForm(Model model) {
+
         model.addAttribute("loginUser", new LoginUser());
         return "login";
     }
+
 
     @PostMapping("/login")
     public ModelAndView loginSubmit(@Valid @ModelAttribute LoginUser loginUser, BindingResult bindingResult, Model model) {

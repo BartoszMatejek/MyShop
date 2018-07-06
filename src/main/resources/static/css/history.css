@@ -1,5 +1,5 @@
 table{
-    color: red;
+    color: white;
 }
 body{
     background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(loginpage.jpg);
@@ -13,6 +13,7 @@ body{
     margin: auto;
 }
 h1{
+    text-align: center;
     color: #4CAF50;
 }
 .form{

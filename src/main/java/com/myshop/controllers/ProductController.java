@@ -36,18 +36,7 @@ public class ProductController {
        return "redirect:/login";
     }
 
-    @PostMapping("/")
-    public String getHomePage(Model model, User user){
-        loggedUser = user;
-        if (loggedUser == null)
-        {
-            return "redirect:/login";
-        }
-        List<Product> list = productRepository.findAllBy();
-        HomeViewModel homeModel = new HomeViewModel(loggedUser,list,null);
-        model.addAttribute("listProduct", homeModel);
-        return "index";
-    }
+
 
     @GetMapping("/")
     public String getHomePage(Model model){
@@ -57,6 +46,19 @@ public class ProductController {
         }
         List<Product> list = productRepository.findAllBy();
         HomeViewModel homeModel = new HomeViewModel(loggedUser,list, null);
+        model.addAttribute("listProduct", homeModel);
+        return "index";
+    }
+
+    @PostMapping("/")
+    public String getHomePage(Model model, User user){
+        loggedUser = user;
+        if (loggedUser == null)
+        {
+            return "redirect:/login";
+        }
+        List<Product> list = productRepository.findAllBy();
+        HomeViewModel homeModel = new HomeViewModel(loggedUser,list,null);
         model.addAttribute("listProduct", homeModel);
         return "index";
     }

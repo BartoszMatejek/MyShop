@@ -1,38 +1,57 @@
 <!DOCTYPE html>
 <html lang="pl" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
+    <title>Historia transakcji</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link href="../static/css/admin.css" th:href="@{css/admin.css}" rel="stylesheet" />
+    <link href="../static/css/history.css" th:href="@{css/history.css}" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Oswald" rel="stylesheet">
+    <style>
+        body{
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(loginpage.jpg);
+        }
+        .navbar {
+            margin-bottom: 50px;
+            border-radius: 0;
 
-    <title>Panel Admina</title>
+        }
+
+        .jumbotron {
+            margin-bottom: 0;
+        }
+
+        .container{
+            font-family: 'Merriweather', serif;
+        }
+        footer {
+            background-color: #f2f2f2;
+            padding: 25px;
+        }
+        th{
+            color: #4CAF50;
+        }
+
+    </style>
 </head>
 <body>
+
 <div class="container">
-    <h1 style="text-align: center">Registered Users</h1>
-
-    <table id="mytable" class="table table-bordred table-striped">
-
+    <h1 style="text-align: center;">Zarejestrowani Użytkownicy</h1>
+    <table class="table">
         <thead>
         <th>Imię</th>
         <th>Nazwisko</th>
-        <th>Email</th>
+        <th>Adres e-mail</th>
         </thead>
-        <tbody>
-
-        <tr th:each="item: ${listUsers}">
+        <tbody th:each="item: ${listUsers}">
             <td th:text="${item.name}"></td>
             <td th:text="${item.lastName}"></td>
             <td th:text="${item.email}"></td>
-        </tr>
         </tbody>
-
     </table>
 </div>
+</div>
 </body>
-</html>
