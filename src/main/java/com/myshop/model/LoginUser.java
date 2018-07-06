@@ -1,7 +1,12 @@
 package com.myshop.model;
 
+import javax.validation.constraints.Email;
+
 public class LoginUser {
+
+    @Email(message = "Nieprawidłowy format adresu e-mail")
     String email;
+
     String password;
 
     public String getEmail() {

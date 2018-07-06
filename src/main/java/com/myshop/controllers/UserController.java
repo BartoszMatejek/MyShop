@@ -45,6 +45,6 @@ public class UserController {
             model.addAttribute("error", "Błędne dane 2!");
             return "register";
         }
-        return "redirect:/success";
+        return "success";
     }
 }

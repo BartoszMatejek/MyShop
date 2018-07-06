@@ -1,7 +1,7 @@
 package com.myshop.model;
 
-
 public class DeliverData {
+
     private String city;
     private String street;
     private int flat;

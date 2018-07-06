@@ -28,6 +28,7 @@ public class ProductController {
     UserRepository userRepository;
 
     public User loggedUser;
+    public DeliverData deliverData;
 
     @GetMapping("logout")
     public String logout(){

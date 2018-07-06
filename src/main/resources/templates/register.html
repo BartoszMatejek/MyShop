@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="robots" content="noindex, nofollow">
 
-    <title>Login</title>
+    <title>Rejestracja</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link href="../static/css/style.css" th:href="@{css/style.css}" rel="stylesheet" />
@@ -19,26 +19,26 @@
         </div>
 
         <div>
-            <td><input type="text" th:field="*{name}" placeholder="Imię"/></td>
-            <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}" th:class="error">Błędne imię</td>
+            <input type="text" th:field="*{name}" placeholder="Imię"/>
+            <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}" th:class="error">Błędne imię</p>
         </div>
         <div>
             <input type="text" th:field="*{lastName}" placeholder="Nazwisko"/>
-            <td th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">Błędne imię</td>
+            <p th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" th:class="error">Błędne imię</p>
         </div>
         <div>
             <input type="text" th:field="*{email}" placeholder="Email"/>
-            <td th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Błędny format emaila</td>
+            <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" th:class="error">Błędny format emaila</p>
         </div>
         <div>
             <input type="password" th:field="*{password}" placeholder="Hasło"/>
-            <td th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Błędne hasło</td>
+            <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" th:class="error">Błędne hasło</p>
         </div>
         <div>
-            <input type="password" th:field="*{passwordConf}" placeholder="Powtórz hasło"/></h3>
+            <input type="password" th:field="*{passwordConf}" placeholder="Powtórz hasło"/>
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Utwórz</button>
-        <p class="message">Masz już konto? <a href="http://localhost:8080/login">Zaloguj się</a></p>
+        <p class="message">Masz już konto? <a th:href="@{'/login'}">Zaloguj się</a></p>
     </form>
 </div>
 </body>

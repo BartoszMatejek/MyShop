@@ -10,17 +10,17 @@
     <link href="../static/css/style.css" th:href="@{css/style.css}" rel="stylesheet" />
 
 </head>
-
 <body>
 <div class="login-page">
     <div class="form">
         <h1>Logowanie</h1>
-        <p style="color: #ffffff;" th:text="${error}" />
         <form action="#" th:action="@{/login}" th:object="${loginUser}" method="post">
             <input type="text" th:field="*{email}" placeholder="email" />
+            <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" th:class="error">Błędne imię</p>
             <input type="password" th:field="*{password}" placeholder="hasło" /></p>
+            <p th:if="${#fields.hasErrors('email')}" th:errors="*{password}" th:class="error">Błędne imię</p>
             <button class="btn btn-lg btn-primary btn-block" type="submit">Zaloguj</button>
-            <p class="message">Nie masz konta? <a href="http://localhost:8080/register">Zarejestruj się</a></p>
+            <p class="message">Nie masz konta? <a th:href="@{'/register'}">Zarejestruj się</a></p>
         </form>
     </div>
 </div>

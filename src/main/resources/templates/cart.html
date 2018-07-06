@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="pl" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>TicketSystem</title>
+    <title>Koszyk</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="../static/css/style.css" th:href="@{css/style.css}" rel="stylesheet" />
     <style>
         body{
         }
@@ -19,7 +20,9 @@
         .jumbotron {
             margin-bottom: 0;
         }
-
+        p{
+            margin: 0;
+        }
         img{
             width: 250px;
             height: 200px;
@@ -28,6 +31,34 @@
         footer {
             background-color: #f2f2f2;
             padding: 25px;
+        }
+        .panel-primary{
+            width: 300px;
+            height: 300px;
+        }
+        .form input{
+            font-family: "Roboto", sans-serif;
+            outline: 1;
+            background: #f2f2f2;
+            width: 100%;
+            border: 0;
+            margin: 0 0 15px;
+            padding: 15px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+        .panel-body{
+            overflow: hidden;
+        }
+        .product {
+            display: block;
+            max-width:100%;
+            width:100%;
+        }
+        .product > img {
+            display: block;
+            max-width: 100%;
+            width:100%;
         }
     </style>
 </head>
@@ -69,11 +100,21 @@
         <h1 style="text-align: center"; >Twój koszyk</h1>
             <div class="panel panel-primary">
                 <div class="panel-heading" th:text="${product.description}"></div>
-                <div class="panel-body" style="width: 90%; max-height: 90%"><img th:src="${product.imageSrc}" class="img-responsive" alt="Image"></div>
+                <div class="product"> <img th:src="${product.imageSrc}" alt="Image"></div>
+
                 <div class="panel-footer" align="center"> <p th:text="${product.price} + ' PLN'"> pln</p></div>
-                <a th:href="@{'/confirmation/' + ${product.id}}"><button type="button" class="btn btn-success" style="width: 100%">Potwierdż płatność</button></a>
-                <a th:href="@{'/'}"><button type="button" class="btn btn-danger" style="width: 100%">Anuluj</button></a>
             </div>
+        <td>
+            <tr>
+                <input type="text"  placeholder="Imię"/>
+            </tr>
+            <tr>
+            <input type="text"  placeholder="Imię"/>
+            </tr>
+                <input type="text"  placeholder="Imię"/>
+                <input type="text"  placeholder="Imię"/>
+        </td>
+        <a th:href="@{'/confirmation/' + ${product.id}}"><button type="button" class="btn btn-success" style="width: 100%">Potwierdż płatność</button></a>
+        <a th:href="@{'/'}"><button type="button" class="btn btn-danger" style="width: 100%">Anuluj</button></a>
         </div>
     </div>
-</div>
