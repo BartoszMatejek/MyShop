@@ -1,13 +1,16 @@
-package com.myshop.Controllers;
+package com.myshop.controllers;
 
-import com.myshop.Model.User;
+import com.myshop.model.User;
 import com.myshop.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import javax.validation.Valid;
 
 @Controller
 public class UserController {
@@ -22,8 +25,11 @@ public class UserController {
     }
 
     @PostMapping("/register")
-    public String registerUser(@ModelAttribute User user, Model model){
+    public String registerUser(@Valid @ModelAttribute User user,BindingResult bindingResult, Model model){
 
+        if(bindingResult.hasErrors()){
+            return "register";
+        }
         if (user.getPassword() == null || !user.getPassword().equals(user.getPasswordConf())) {
             model.addAttribute("error", "Hasła nie są takie same.");
             return "register";
@@ -39,6 +45,6 @@ public class UserController {
             model.addAttribute("error", "Błędne dane 2!");
             return "register";
         }
-        return "success";
+        return "redirect:/success";
     }
 }

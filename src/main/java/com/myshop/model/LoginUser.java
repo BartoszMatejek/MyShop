@@ -1,4 +1,4 @@
-package com.myshop.Model;
+package com.myshop.model;
 
 public class LoginUser {
     String email;

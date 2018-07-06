@@ -12,6 +12,10 @@ body{
 h1{
     color: #4CAF50;
 }
+.error{
+    color: red;
+    font-size: 15px;
+}
 .form{
     position: relative;
     z-index: 1;

@@ -1,7 +1,6 @@
 package com.myshop.repositories;
 
-import com.myshop.Model.BoughtProduct;
-import javassist.expr.Expr;
+import com.myshop.model.BoughtProduct;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

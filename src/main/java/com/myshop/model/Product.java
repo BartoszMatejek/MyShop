@@ -1,4 +1,4 @@
-package com.myshop.Model;
+package com.myshop.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;

@@ -1,7 +1,7 @@
-package com.myshop.Controllers;
+package com.myshop.controllers;
 
-import com.myshop.Model.LoginUser;
-import com.myshop.Model.User;
+import com.myshop.model.LoginUser;
+import com.myshop.model.User;
 import com.myshop.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

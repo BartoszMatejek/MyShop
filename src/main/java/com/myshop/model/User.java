@@ -1,9 +1,10 @@
-package com.myshop.Model;
+package com.myshop.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 public class User {
@@ -12,16 +13,20 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @NotNull
-    @NotEmpty
+    @NotEmpty(message = "Pole nie może być puste")
+    @Email(message = "Nieprawidłowy format adresu e-mail")
     private String email;
     @NotNull
-    @NotEmpty
+    @NotEmpty(message = "Pole nie może być puste")
+    @Size(min = 2,message = "Imię powinno zawierać minimum 2 znaki")
     private String name;
     @NotNull
-    @NotEmpty
+    @NotEmpty(message = "Pole nie może być puste")
+    @Size(min = 2, message = "Nazwisko musi zawierać minimum 2 znaki")
     private String lastName;
     @NotNull
-    @NotEmpty
+    @NotEmpty(message = "Pole nie może być puste")
+    @Size(min = 5,message = "Hasło powinno zawierać minimum 5 znaków")
     private String password;
 
     @Transient

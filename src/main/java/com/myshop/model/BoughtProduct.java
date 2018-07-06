@@ -1,12 +1,9 @@
-package com.myshop.Model;
-
-import org.springframework.context.annotation.Primary;
+package com.myshop.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.util.Date;
 
 @Entity
 public class BoughtProduct {

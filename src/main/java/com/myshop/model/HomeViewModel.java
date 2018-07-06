@@ -1,4 +1,4 @@
-package com.myshop.Model;
+package com.myshop.model;
 
 import java.util.List;
 

@@ -1,7 +1,7 @@
-package com.myshop.Controllers;
+package com.myshop.controllers;
 
 
-import com.myshop.Model.*;
+import com.myshop.model.*;
 import com.myshop.repositories.BoughtProductsRepository;
 import com.myshop.repositories.ProductRepository;
 import com.myshop.repositories.UserRepository;

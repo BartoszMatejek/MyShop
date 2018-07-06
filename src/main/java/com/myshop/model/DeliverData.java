@@ -1,6 +1,4 @@
-package com.myshop.Model;
-
-import javax.persistence.Entity;
+package com.myshop.model;
 
 
 public class DeliverData {

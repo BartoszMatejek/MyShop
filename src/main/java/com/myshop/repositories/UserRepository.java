@@ -1,6 +1,6 @@
 package com.myshop.repositories;
 
-import com.myshop.Model.User;
+import com.myshop.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

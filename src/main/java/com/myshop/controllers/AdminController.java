@@ -1,8 +1,8 @@
-package com.myshop.Controllers;
+package com.myshop.controllers;
 
-import com.myshop.Model.Admin;
-import com.myshop.Model.LoginAdmin;
-import com.myshop.Model.User;
+import com.myshop.model.Admin;
+import com.myshop.model.LoginAdmin;
+import com.myshop.model.User;
 import com.myshop.repositories.AdminRepository;
 import com.myshop.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +11,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
