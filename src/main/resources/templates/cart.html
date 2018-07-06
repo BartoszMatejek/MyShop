@@ -7,14 +7,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link href="../static/css/style.css" th:href="@{css/style.css}" rel="stylesheet" />
+
     <style>
         body{
         }
         .navbar {
             margin-bottom: 50px;
             border-radius: 0;
-            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(loginpage.jpg);
         }
 
         .jumbotron {
@@ -27,6 +26,7 @@
             width: 250px;
             height: 200px;
             text-align: center;
+            margin-top: 16px;
         }
         footer {
             background-color: #f2f2f2;
@@ -36,7 +36,7 @@
             width: 300px;
             height: 300px;
         }
-        .form input{
+        input{
             font-family: "Roboto", sans-serif;
             outline: 1;
             background: #f2f2f2;
@@ -47,9 +47,6 @@
             box-sizing: border-box;
             font-size: 14px;
         }
-        .panel-body{
-            overflow: hidden;
-        }
         .product {
             display: block;
             max-width:100%;
@@ -59,6 +56,12 @@
             display: block;
             max-width: 100%;
             width:100%;
+        }
+        h3{
+            text-align: center;
+        }
+        button{
+            height: 50px;
         }
     </style>
 </head>
@@ -104,17 +107,27 @@
 
                 <div class="panel-footer" align="center"> <p th:text="${product.price} + ' PLN'"> pln</p></div>
             </div>
-        <td>
-            <tr>
-                <input type="text"  placeholder="Imię"/>
-            </tr>
-            <tr>
-            <input type="text"  placeholder="Imię"/>
-            </tr>
-                <input type="text"  placeholder="Imię"/>
-                <input type="text"  placeholder="Imię"/>
+        <h3>Dane do wysyłki</h3>
+        <div>
+                <input type="text"  placeholder="Miasto"/>
+    </div>
+    <div>
+                <input type="text"  placeholder="Ulica i numer bloku mieszkaniowego / domu"/>
+    </div>
+    <div>
+                <input type="text"  placeholder="Mieszkanie"/>
+    </div>
+    <div>
+                <input type="text"  placeholder="Kod pocztowy"/>
+    </div>
         </td>
-        <a th:href="@{'/confirmation/' + ${product.id}}"><button type="button" class="btn btn-success" style="width: 100%">Potwierdż płatność</button></a>
-        <a th:href="@{'/'}"><button type="button" class="btn btn-danger" style="width: 100%">Anuluj</button></a>
+        <a th:href="@{'/confirmation/' + ${product.id}}"><button type="button" class="btn btn-success" style="width: 30%">Potwierdż płatność</button></a>
+        <a th:href="@{'/'}"><button type="button" class="btn btn-danger" style="width: 30%";>Anuluj</button></a>
         </div>
     </div>
+
+<footer class="container-fluid text-center">
+    <p>Wszystkie prawa zastrzeżone</p>
+    <form class="form-inline">
+    </form>
+</footer>
