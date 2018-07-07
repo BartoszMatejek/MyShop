@@ -20,19 +20,19 @@
 
         <div>
             <input type="text" th:field="*{name}" placeholder="Imię"/>
-            <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}" th:class="error">Błędne imię</p>
+            <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}" th:class="error"></p>
         </div>
         <div>
             <input type="text" th:field="*{lastName}" placeholder="Nazwisko"/>
-            <p th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" th:class="error">Błędne imię</p>
+            <p th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" th:class="error"></p>
         </div>
         <div>
             <input type="text" th:field="*{email}" placeholder="Email"/>
-            <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" th:class="error">Błędny format emaila</p>
+            <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" th:class="error"></p>
         </div>
         <div>
             <input type="password" th:field="*{password}" placeholder="Hasło"/>
-            <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" th:class="error">Błędne hasło</p>
+            <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" th:class="error"></p>
         </div>
         <div>
             <input type="password" th:field="*{passwordConf}" placeholder="Powtórz hasło"/>

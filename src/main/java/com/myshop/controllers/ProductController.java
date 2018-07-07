@@ -122,4 +122,9 @@ public class ProductController {
         model.addAttribute("user", homeViewModel);
         return "mydata";
     }
+
+    @GetMapping("contact")
+    public String getContactPage(){
+        return "contact";
+    }
 }

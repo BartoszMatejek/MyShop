@@ -1,39 +1,44 @@
 <!DOCTYPE html>
 <html lang="pl" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Potwierdzenie</title>
+    <title>Historia transakcji</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="../static/css/history.css" th:href="@{css/history.css}" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Merriweather|Oswald" rel="stylesheet">
     <style>
+        body{
+        }
         .navbar {
             margin-bottom: 50px;
             border-radius: 0;
-            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(loginpage.jpg);
+
         }
-        .container{
-            font-family: 'Merriweather', serif;
-        }
+
         .jumbotron {
             margin-bottom: 0;
         }
 
+        .container{
+            font-family: 'Merriweather', serif;
+        }
         footer {
             background-color: #f2f2f2;
             padding: 25px;
         }
-
-
-        .img{
-            max-width: 50%;
+        th{
+            color: #4CAF50;
+        }
+        td{
+            color:white;
         }
     </style>
 </head>
-
 <body>
+
 <div class="jumbotron">
     <div class="container text-center">
         <h1>Gamer Shop</h1>
@@ -57,24 +62,27 @@
                 <li><a th:href="@{'/contact'}">Kontakt</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-user" >User</span></a></li>
+                <li><a href="/logout"><span class="glyphicon glyphicon-off" > Wyloguj</span> </a></li>
             </ul>
         </div>
     </div>
 </nav>
 
 <div class="container">
-    <div class="row">
-        <h1 style="text-align: center"; >GRATULACJE</h1>
-        <div class="panel panel-primary">
-            <div class="panel-heading"></div>
-            <div class="panel-body" ><center><img th:src="${product.imageSrc}" style="max-width: 30%;" class="img-responsive" alt="Image"></center></div>
-            <div class="panel-footer" align="center"> <p>Produkt zakupiony pomyślnie</p></div>
-            <a th:href="@{'/'}"><button type="button" class="btn btn-success">Przejdź do strony głównej</button></a>
-        </div>
-    </div>
+    <h1 style="text-align: center;">Dane kontaktowe sklepu</h1>
+    <table class="table">
+        <thead>
+        <th>Imię i nazwisko</th>
+        <th>Telefon kontaktowy</th>
+        <th>email</th>
+        </thead>
+        <tbody>
+        <td >Bartosz Matejek</td>
+        <td >+48 512 213 123</td>
+        <td >kontakt@kontakt-shop.com</td>
+        </tbody>
+    </table>
 </div>
 </div>
 </body>
-</html>

@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="pl" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Historia transakcji</title>
+    <title>Zarejestrowani Użytkownicy</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link href="../static/css/history.css" th:href="@{css/history.css}" rel="stylesheet" />
+    <link href="../static/css/admin.css" th:href="@{css/admin.css}" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Merriweather|Oswald" rel="stylesheet">
     <style>
         body{
-            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(loginpage.jpg);
         }
         .navbar {
             margin-bottom: 50px;
@@ -33,7 +32,9 @@
         th{
             color: #4CAF50;
         }
-
+        td{
+            color:white;
+        }
     </style>
 </head>
 <body>
@@ -47,11 +48,10 @@
         <th>Adres e-mail</th>
         </thead>
         <tbody th:each="item: ${listUsers}">
-            <td th:text="${item.name}"></td>
-            <td th:text="${item.lastName}"></td>
-            <td th:text="${item.email}"></td>
+        <td th:text="${item.name}"></td>
+        <td th:text="${item.lastName}"></td>
+        <td th:text="${item.email}"></td>
         </tbody>
     </table>
-</div>
 </div>
 </body>
